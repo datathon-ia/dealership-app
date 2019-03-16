@@ -20,9 +20,43 @@
   <div #sidebarContent>
     <div class="head  m-b-gutter">
       <h4 class="title is-6 m-b-0">Accident detecté</h4>
-      <a (click)="closeSidebar()"><i class="fa fa-close"></i></a>
+      <a (click)="closeSidebar()"><i class="fa fa-close has-text-grey"></i></a>
     </div>
 
-    <app-accident-card></app-accident-card>
+    <div class="card">
+      <div class="card--left">
+        <figure>
+          <img src="../../../../assets/img/accident.jpg" alt="" />
+        </figure>
+      </div>
+      <div class="card--right">
+        <div>
+          <div class="card--middle">
+            <p class="has-dot m-l-sm">
+              <i class="dot m-r-xs">•</i>
+              <span class="p-b-md has-text-black">
+                3 véhicules sont concernés par un accident sur votre secteur
+              </span>
+            </p>
+            <p class="m-l-sm m-t-md vehicles">
+              <span class="m-r-gutter">
+                <i class="fa fa-car m-r-xs"></i>
+                x 2
+              </span>
+              <span class="m-r-gutter">
+                <i class="fa fa-motorcycle m-r-xs"></i>
+                x 1
+              </span>
+            </p>
+          </div>
+          <div class="card--bottom">
+            <p class="date m-l-sm p-t-md m-t-md">
+              <span class="m-r-gutter">17 MARS</span>
+              <span>15:45</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

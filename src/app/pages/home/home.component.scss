@@ -13,8 +13,73 @@ img {
   }
 }
 
-.head {
+.card {
+  border: 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  box-shadow: 0 3px 5px rgba($black, 0.08);
+
+  margin-bottom: 20px;
   @include flexbox;
-  @include align-items(center);
-  @include justify-content(space-between);
+
+  figure {
+    height: 220px;
+    width: 200px;
+    overflow: hidden;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+
+  img {
+    width: 200px;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  &--right {
+    width: calc(100% - 200px);
+    > div {
+      height: 100%;
+      padding: 20px;
+      @include flexbox;
+      @include flex-direction(column);
+      @include align-items(center);
+      @include justify-content(space-between);
+    }
+  }
+  &--left {
+    height: 220px;
+    width: 200px;
+  }
+  &--bottom {
+    width: 100%;
+  }
+}
+
+.has-dot {
+  @include flexbox;
+  @include align-items(flex-start);
+  @include justify-content(flex-start);
+  border-bottom: 1px solid #dedede;
+}
+
+.date {
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  border-top: 1px solid #dedede;
+}
+
+.dot {
+  font-size: 30px;
+  line-height: 0.8;
+  font-style: normal;
+  color: #f33f5d;
+}
+
+.vehicles span {
+  display: inline-block;
 }

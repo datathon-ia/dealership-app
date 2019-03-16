@@ -17,8 +17,10 @@
 
 <div class="sidebar" #sidebar>
   <div #sidebarContent>
-    <a (click)="closeSidebar()">Close</a>
-    <!-- TODO : Boucle for ici -->
+    <div class="head  m-b-gutter">
+      <h4 class="title is-6 m-b-0">Historique des accidents</h4>
+      <a (click)="closeSidebar()"><i class="fa fa-close has-text-grey"></i></a>
+    </div>
     <app-accident-card></app-accident-card>
   </div>
 </div>

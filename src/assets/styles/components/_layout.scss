@@ -1,7 +1,7 @@
 .sidebar {
   position: fixed;
   height: calc(100vh - 80px);
-
+  border-left: 1px solid #dedede;
   background-color: #fefefe;
   right: 0;
   top: 80px;
@@ -25,6 +25,7 @@
     min-height: 80px;
     position: fixed;
     width: 100%;
+    border-bottom: 1px solid #dedede;
   }
 }
 
@@ -48,4 +49,10 @@
 
 .card {
   font-size: 0.8rem;
+}
+
+.head {
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(space-between);
 }
