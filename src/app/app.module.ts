@@ -10,6 +10,8 @@ import { AccidentCardComponent } from './pages/accidents/accident-card/accident-
 import { HeaderComponent } from './partials/header/header.component'
 import { appRoutes } from './app.routes'
 
+import { AgmCoreModule } from '@agm/core'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,13 @@ import { appRoutes } from './app.routes'
     AccidentCardComponent,
     HeaderComponent
   ],
-  imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBKsTSVaMTTtKUIM39lok0W9r2Y2fXkSu4'
+    })
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

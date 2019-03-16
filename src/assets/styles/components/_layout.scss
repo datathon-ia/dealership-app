@@ -27,14 +27,6 @@
   }
 }
 
-.agm-map {
-  height: calc(100vh - 80px);
-  width: 100vw;
-  position: relative;
-  top: 80px;
-  left: 0;
-}
-
 .navbar-item {
   transform: transition(all 0.2s ease-in-out);
   -webkit-transform: transition(all 0.2s ease-in-out);
@@ -44,4 +36,11 @@
 }
 .navbar-item.is-active {
   color: #ca056e !important;
+}
+.sebm-google-map-container {
+  height: calc(100vh - 80px);
+  width: 100vw;
+  position: relative;
+  top: 80px;
+  left: 0;
 }
