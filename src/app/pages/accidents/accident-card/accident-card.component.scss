@@ -1,0 +1,20 @@
+@import '../../../../assets/styles/variables';
+@import '../../../../../node_modules/bulma/sass/utilities/all';
+@import '../../../../assets/styles/commons/mixins';
+
+.card {
+  border: 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  box-shadow: 0 3px 5px rgba($black, 0.08);
+  padding: 20px;
+  margin-bottom: 20px;
+
+  img {
+    width: 200px;
+    height: auto;
+  }
+}

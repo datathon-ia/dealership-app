@@ -2,7 +2,7 @@
   position: fixed;
   height: calc(100vh - 80px);
 
-  background-color: #eef3f6;
+  background-color: #fefefe;
   right: 0;
   top: 80px;
   overflow-y: scroll;
@@ -44,4 +44,8 @@
   position: relative;
   top: 80px;
   left: 0;
+}
+
+.card {
+  font-size: 0.8rem;
 }
