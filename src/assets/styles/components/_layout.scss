@@ -1,9 +1,8 @@
 .sidebar {
   position: fixed;
   height: calc(100vh - 80px);
-  // width: 0;
-  width: 530px;
-  background-color: #fff;
+
+  background-color: #eef3f6;
   right: 0;
   top: 80px;
   overflow-y: scroll;
@@ -12,7 +11,6 @@
   > div {
     padding: 25px;
     position: relative;
-    opacity: 0;
     top: 6px;
     left: 0;
   }
