@@ -17,7 +17,12 @@
 </agm-map>
 
 <div class="sidebar" #sidebar>
-  <a (click)="closeSidebar()">Close</a>
-  <!-- TODO : Boucle for ici -->
-  <app-accident-card></app-accident-card>
+  <div #sidebarContent>
+    <div class="head  m-b-gutter">
+      <h4 class="title is-4 m-b-0">Accident detecté</h4>
+      <a (click)="closeSidebar()"><i class="fa fa-close"></i></a>
+    </div>
+
+    <app-accident-card></app-accident-card>
+  </div>
 </div>

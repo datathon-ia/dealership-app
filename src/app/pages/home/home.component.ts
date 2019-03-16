@@ -12,6 +12,7 @@ import { AccidentService } from '../../common/services/accident.service'
 })
 export class HomeComponent implements OnInit {
   @ViewChild('sidebar') sidebarEl: ElementRef
+  @ViewChild('sidebarContent') sidebarContentEl: ElementRef
 
   lat = 46.058691
   lng = 6.576179
@@ -187,11 +188,21 @@ export class HomeComponent implements OnInit {
       width: '530px',
       ease: Power2.easeInOut
     })
+    timeline.to(this.sidebarContentEl.nativeElement, 0.2, {
+      top: 0,
+      opacity: 1,
+      ease: Power2.easeInOut
+    })
     this.showSidebar = true
   }
 
   closeSidebar() {
     const timeline = new TimelineLite()
+    timeline.to(this.sidebarContentEl.nativeElement, 0.2, {
+      top: '6px',
+      opacity: 0,
+      ease: Power2.easeInOut
+    })
     timeline.to(this.sidebarEl.nativeElement, 0.5, {
       width: '0',
       ease: Power2.easeInOut

@@ -11,12 +11,14 @@
     *ngFor="let accident of accidents"
     [latitude]="accident.camera.lat"
     [longitude]="accident.camera.lon"
-    (markerClick)="openSidebar(m, $event)"
+    (markerClick)="openSidebar()"
   ></agm-marker>
 </agm-map>
 
 <div class="sidebar" #sidebar>
-  <a (click)="closeSidebar()">Close</a>
-  <!-- TODO : Boucle for ici -->
-  <app-accident-card></app-accident-card>
+  <div #sidebarContent>
+    <a (click)="closeSidebar()">Close</a>
+    <!-- TODO : Boucle for ici -->
+    <app-accident-card></app-accident-card>
+  </div>
 </div>
