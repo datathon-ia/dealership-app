@@ -6,6 +6,7 @@
   right: 0;
   top: 80px;
   overflow-y: scroll;
+  z-index: 9;
   > div {
     padding: 25px;
     position: relative;
@@ -35,7 +36,7 @@
   -o-transform: transition(all 0.2s ease-in-out);
 }
 .navbar-item.is-active {
-  color: #ca056e !important;
+  color: #f33f5d !important;
 }
 .sebm-google-map-container {
   height: calc(100vh - 80px);
