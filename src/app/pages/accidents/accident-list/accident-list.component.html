@@ -1,3 +1,18 @@
-<p>
-  accident-list works!
-</p>
+<agm-map
+  [latitude]="lat"
+  [longitude]="lng"
+  [streetViewControl]="false"
+  [mapDraggable]="false"
+  [zoomControl]="false"
+  [zoom]="10"
+  [styles]="mapStyles"
+>
+  <agm-marker
+    *ngFor="let accident of accidents"
+    [latitude]="accident.camera.lat"
+    [longitude]="accident.camera.lon"
+    (markerClick)="openModal(m, $event)"
+  ></agm-marker>
+</agm-map>
+
+<app-sidebar *ngIf="showSidebar"> </app-sidebar>
