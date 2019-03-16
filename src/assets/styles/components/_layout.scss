@@ -1,0 +1,47 @@
+.sidebar {
+  position: fixed;
+  height: calc(100vh - 80px);
+  width: 0;
+  background-color: #fff;
+  right: 0;
+  top: 80px;
+  overflow-y: scroll;
+  > div {
+    padding: 25px;
+    position: relative;
+    opacity: 0;
+    top: 6px;
+    left: 0;
+  }
+}
+
+.navbar-item img {
+  max-height: 3.75rem;
+}
+
+@media screen and (min-width: 1088px) {
+  .navbar {
+    min-height: 80px;
+    position: fixed;
+    width: 100%;
+  }
+}
+
+.agm-map {
+  height: calc(100vh - 80px);
+  width: 100vw;
+  position: relative;
+  top: 80px;
+  left: 0;
+}
+
+.navbar-item {
+  transform: transition(all 0.2s ease-in-out);
+  -webkit-transform: transition(all 0.2s ease-in-out);
+  -moz-transform: transition(all 0.2s ease-in-out);
+  -ms-transform: transition(all 0.2s ease-in-out);
+  -o-transform: transition(all 0.2s ease-in-out);
+}
+.navbar-item.is-active {
+  color: #ca056e !important;
+}
