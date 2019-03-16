@@ -10,7 +10,8 @@ import { AccidentCardComponent } from './pages/accidents/accident-card/accident-
 import { HeaderComponent } from './partials/header/header.component'
 import { appRoutes } from './app.routes'
 
-import { AgmCoreModule } from '@agm/core'
+import { AgmCoreModule } from '@agm/core';
+import { SidebarComponent } from './partials/sidebar/sidebar.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AgmCoreModule } from '@agm/core'
     HomeComponent,
     AccidentListComponent,
     AccidentCardComponent,
-    HeaderComponent
+    HeaderComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

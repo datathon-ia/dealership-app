@@ -1,7 +1,9 @@
 <agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  <agm-marker
+    [latitude]="lat"
+    [longitude]="lng"
+    (markerClick)="openModal(marker)"
+  ></agm-marker>
 </agm-map>
 
-<div class="sidebar">
-  <app-accident-card></app-accident-card>
-</div>
+<app-sidebar *ngIf="showSidebar"> </app-sidebar>

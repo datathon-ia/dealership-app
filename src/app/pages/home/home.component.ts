@@ -8,7 +8,14 @@ import { Component, OnInit } from '@angular/core'
 export class HomeComponent implements OnInit {
   lat = 46.058691
   lng = 6.576179
+
+  showSidebar = false
+
   constructor() {}
 
   ngOnInit() {}
+
+  openModal() {
+    this.showSidebar = true
+  }
 }
