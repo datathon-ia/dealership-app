@@ -6,6 +6,7 @@ export interface Accident {
     lat: number
     lon: number
   }
+  closed: boolean
   createdAt: Date
   vehicles: string[]
 }
