@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core'
 import { MapTypeStyle } from '@agm/core'
+import { TimelineLite, Power2 } from 'gsap'
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,8 @@ import { MapTypeStyle } from '@agm/core'
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  @ViewChild('sidebar') sidebarEl: ElementRef
+
   lat = 46.058691
   lng = 6.576179
 
@@ -154,13 +157,28 @@ export class HomeComponent implements OnInit {
     }
   ]
 
-  showSidebar = true
+  showSidebar = false
 
   constructor() {}
 
   ngOnInit() {}
 
-  openModal() {
+  openSidebar() {
+    const timeline = new TimelineLite()
+
+    timeline.to(this.sidebarEl.nativeElement, 0.5, {
+      width: '530px',
+      ease: Power2.easeInOut
+    })
     this.showSidebar = true
+  }
+
+  closeSidebar() {
+    const timeline = new TimelineLite()
+    timeline.to(this.sidebarEl.nativeElement, 0.5, {
+      width: '0',
+      ease: Power2.easeInOut
+    })
+    this.showSidebar = false
   }
 }

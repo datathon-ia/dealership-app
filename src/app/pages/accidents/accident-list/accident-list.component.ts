@@ -1,7 +1,14 @@
-import { Component, OnInit, OnDestroy } from '@angular/core'
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ViewChild,
+  ElementRef
+} from '@angular/core'
 import { MapTypeStyle } from '@agm/core'
 import { Accident } from '../../../common/interfaces/accident'
 import { AccidentService } from '../../../common/services/accident.service'
+import { TimelineLite, Power2 } from 'gsap'
 
 @Component({
   selector: 'app-accident-list',
@@ -10,6 +17,8 @@ import { AccidentService } from '../../../common/services/accident.service'
   providers: [AccidentService]
 })
 export class AccidentListComponent implements OnInit, OnDestroy {
+  @ViewChild('sidebar') sidebarEl: ElementRef
+
   lat = 46.058691
   lng = 6.576179
   mapStyles: MapTypeStyle[] = []
@@ -17,6 +26,7 @@ export class AccidentListComponent implements OnInit, OnDestroy {
   accidents: Accident[]
   interval: any
 
+  showSidebar = false
   constructor(private accidentService: AccidentService) {}
 
   ngOnInit() {
@@ -33,7 +43,29 @@ export class AccidentListComponent implements OnInit, OnDestroy {
     }
   }
 
-  openModal(m: any, event, any) {
-    console.log(m, event)
+  openSidebar() {
+    const timeline = new TimelineLite()
+
+    if (this.showSidebar) {
+      timeline.to(this.sidebarEl.nativeElement, 0.5, {
+        width: '0',
+        ease: Power2.easeInOut
+      })
+    }
+
+    timeline.to(this.sidebarEl.nativeElement, 0.5, {
+      width: '530px',
+      ease: Power2.easeInOut
+    })
+    this.showSidebar = true
+  }
+
+  closeSidebar() {
+    const timeline = new TimelineLite()
+    timeline.to(this.sidebarEl.nativeElement, 0.5, {
+      width: '0',
+      ease: Power2.easeInOut
+    })
+    this.showSidebar = false
   }
 }

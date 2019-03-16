@@ -12,7 +12,6 @@ import { HeaderComponent } from './partials/header/header.component'
 import { appRoutes } from './app.routes'
 
 import { AgmCoreModule } from '@agm/core'
-import { SidebarComponent } from './partials/sidebar/sidebar.component'
 
 @NgModule({
   declarations: [
@@ -20,8 +19,7 @@ import { SidebarComponent } from './partials/sidebar/sidebar.component'
     HomeComponent,
     AccidentListComponent,
     AccidentCardComponent,
-    HeaderComponent,
-    SidebarComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
