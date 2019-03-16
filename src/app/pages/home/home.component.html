@@ -8,9 +8,10 @@
   [styles]="mapStyles"
 >
   <agm-marker
-    [latitude]="lat"
-    [longitude]="lng"
-    (markerClick)="openSidebar(marker)"
+    *ngFor="let accident of accidents"
+    [latitude]="accident.camera.lat"
+    [longitude]="accident.camera.lon"
+    (markerClick)="openSidebar(accident)"
     iconUrl="../../../assets/img/caution.gif"
   ></agm-marker>
 </agm-map>

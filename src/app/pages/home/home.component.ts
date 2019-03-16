@@ -1,17 +1,22 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core'
 import { MapTypeStyle } from '@agm/core'
 import { TimelineLite, Power2 } from 'gsap'
+import { Accident } from '../../common/interfaces/accident'
+import { AccidentService } from '../../common/services/accident.service'
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  providers: [AccidentService]
 })
 export class HomeComponent implements OnInit {
   @ViewChild('sidebar') sidebarEl: ElementRef
 
   lat = 46.058691
   lng = 6.576179
+
+  selectedAccident: Accident
 
   mapStyles: MapTypeStyle[] = [
     {
@@ -158,12 +163,24 @@ export class HomeComponent implements OnInit {
   ]
 
   showSidebar = false
+  interval: any
+  accidents: Accident[]
+  selectedAccidents: Accident
 
-  constructor() {}
+  constructor(private accidentService: AccidentService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.interval = setInterval(() => {
+      this.accidentService.list().subscribe((res: Accident[]) => {
+        this.accidents = res.filter((accident: Accident) => !accident.closed)
+        console.log(this.accidents)
+      })
+    }, 2000)
+  }
 
-  openSidebar() {
+  openSidebar(accident: Accident) {
+    this.selectedAccident = accident
+
     const timeline = new TimelineLite()
 
     timeline.to(this.sidebarEl.nativeElement, 0.5, {
