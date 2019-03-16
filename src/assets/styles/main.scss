@@ -1,32 +1,18 @@
+// Font awesome
+@import '../../../node_modules/font-awesome/scss/font-awesome';
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400, 600, 700');
+
+// Custom Variables
+@import 'variables';
+
+// Bulma
 @import '../../../node_modules/bulma/bulma';
 
-.navbar-item img {
-  max-height: 3.75rem;
-}
+// Commons
+@import 'commons/mixins';
 
-@media screen and (min-width: 1088px) {
-  .navbar {
-    min-height: 80px;
-    position: fixed;
-    width: 100%;
-  }
-}
-
-iframe {
-  height: calc(100vh - 80px);
-  width: 100vw;
-  position: relative;
-  top: 80px;
-  left: 0;
-}
-
-.navbar-item {
-  transform: transition(all 0.2s ease-in-out);
-  -webkit-transform: transition(all 0.2s ease-in-out);
-  -moz-transform: transition(all 0.2s ease-in-out);
-  -ms-transform: transition(all 0.2s ease-in-out);
-  -o-transform: transition(all 0.2s ease-in-out);
-}
-.navbar-item.is-active {
-  color: #ca056e !important;
-}
+// Components
+@import 'components/layout';

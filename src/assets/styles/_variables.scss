@@ -1,0 +1,103 @@
+//__ Variables
+
+// Colors
+
+$black: #171717 !default;
+$black-bis: #333333 !default;
+$black-ter: #616e71 !default;
+
+$grey-dark: #7c7c7c !default;
+$grey: #aaaaaa !default;
+$grey-light: #e1e4e4 !default;
+$grey-lighter: #e8e8e8 !default;
+
+$white-bis: #f9f9f9 !default;
+$white: #ffffff !default;
+$light: $white;
+
+$malibu: #02acc7 !default; //
+$cosmic: #7d515f !default;
+$indigo: #3f5d8e !default;
+$java: #007a80 !default;
+$forest: #539b7a !default;
+$lime: #afca00 !default; //
+$razzmatazz: #d51857 !default; //
+$lipstick: #b70263 !default;
+$victory: #58487f !default;
+$mulberry: #804272 !default;
+$trendy: #a669a8 !default;
+$scarlet: #56106d !default;
+$magneto: #16041c !default; //
+
+$green: $forest !default;
+$orange: #ff6300 !default; //
+$yellow: #ffb600 !default; //
+$turquoise: $malibu !default;
+$blue: $indigo !default;
+$purple: $scarlet !default;
+$red: #f40438 !default;
+
+$orange-dark: darken($orange, 20%);
+$yellow-dark: darken($yellow, 20%);
+$green-dark: darken($green, 20%);
+$turquoise-dark: darken($turquoise, 20%);
+$blue-dark: darken($blue, 20%);
+$purple-dark: darken($purple, 20%);
+$red-dark: darken($red, 20%);
+
+$orange-light: lighten($orange, 20%);
+$yellow-light: lighten($yellow, 20%);
+$green-light: lighten($green, 20%);
+$turquoise-light: lighten($turquoise, 20%);
+$blue-light: lighten($blue, 20%);
+$purple-light: lighten($purple, 20%);
+$red-light: lighten($red, 20%);
+
+$primary: $scarlet !default;
+
+// fonts
+
+$bw-base-font-size: 1.8rem;
+
+// Typography
+$family-sans-serif: 'Open sans', sans-serif !default;
+$family-monospace: 'Montserrat', sans-serif !default;
+$family-alt: 'Verdana', sans-serif !default;
+
+$size-1: 4.2rem !default;
+$size-2: 2.8rem !default;
+$size-2-alt: 3.4rem !default;
+$size-3: 2.6rem !default;
+$size-4: 2.4rem !default;
+$size-5: 2.1rem !default;
+$size-6: 1.8rem !default;
+$size-7: 1.4rem !default;
+$size-8: 1.7rem !default;
+
+$title-size: 3.4rem !default;
+$subtitle-size: 2.6rem !default;
+
+$title-weight: 400 !default;
+$title-weight-bold: 700 !default;
+
+$subtitle-weight: 400 !default;
+
+$weight-light: 100 !default;
+$weight-normal: 400 !default;
+$weight-bold: 700 !default;
+$weight-black: 900 !default;
+
+// Body
+$body-size: 18px !default;
+
+// Grid
+$gap: 30px !default;
+$column-gap: 15px !default;
+
+// Responsiveness
+// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+$small-mobile: 375px !default;
+$tablet: 768px !default;
+$desktop: 1000px !default;
+$widescreen: 1188px !default;
+$fullhd: 1458px !default;
