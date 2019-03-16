@@ -1,26 +1,22 @@
-<<<<<<< HEAD
-<agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker
-    [latitude]="lat"
-    [longitude]="lng"
-    iconUrl="../../../assets/img/caution.gif"
-    width="40"
-=======
 <agm-map
   [latitude]="lat"
   [longitude]="lng"
   [streetViewControl]="false"
   [mapDraggable]="false"
   [zoomControl]="false"
-  [zoom]="10"
+  [zoom]="12"
   [styles]="mapStyles"
 >
   <agm-marker
     [latitude]="lat"
     [longitude]="lng"
     (markerClick)="openModal(marker)"
->>>>>>> b09046c263d3aa74ae7894e7c6e6a9c1720c8d75
+    iconUrl="../../../assets/img/caution.gif"
   ></agm-marker>
 </agm-map>
 
-<app-sidebar *ngIf="showSidebar"> </app-sidebar>
+<div class="sidebar" *ngIf="showSidebar">
+  test
+  <!-- TODO : Boucle for ici -->
+  <app-accident-card></app-accident-card>
+</div>
