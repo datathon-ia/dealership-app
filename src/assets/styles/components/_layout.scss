@@ -26,6 +26,9 @@
     position: fixed;
     width: 100%;
     border-bottom: 1px solid #dedede;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: bold;
   }
 }
 
@@ -35,6 +38,8 @@
   -moz-transform: transition(all 0.2s ease-in-out);
   -ms-transform: transition(all 0.2s ease-in-out);
   -o-transform: transition(all 0.2s ease-in-out);
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 .navbar-item.is-active {
   color: #f33f5d !important;

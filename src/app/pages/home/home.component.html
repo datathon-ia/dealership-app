@@ -38,12 +38,12 @@
         <i class="dot m-r-xs">•</i>
         <span class="p-b-md has-text-black p-t-md">
           {{ selectedAccident.vehicles.length }}
-          <ng-container *ngIf="selectedAccident.vehicles.length > 1"
-            >véhicules sont concernés</ng-container
-          >
-          <ng-container *ngIf="selectedAccident.vehicles.length < 2"
-            >véhicule est concerné</ng-container
-          >
+          <ng-container *ngIf="selectedAccident.vehicles.length > 1">
+            véhicules sont concernés
+          </ng-container>
+          <ng-container *ngIf="selectedAccident.vehicles.length < 2">
+            véhicule est concerné
+          </ng-container>
           par un accident sur votre secteur
         </span>
       </p>
@@ -56,11 +56,11 @@
         <div class="card--middle">
           <p class="    m-t-md vehicles">
             <span class="m-r-gutter" *ngIf="carCount">
-              <i class="fa fa-car m-r-xs"></i>
+              <i class="fa fa-car m-r-xs tag"></i>
               x {{ carCount }}
             </span>
             <span class="m-r-gutter" *ngIf="bikeCount">
-              <i class="fa fa-motorcycle m-r-xs" *ngIf="bikeCount"></i>
+              <i class="fa fa-motorcycle m-r-xs tag" *ngIf="bikeCount"></i>
               x {{ bikeCount }}
             </span>
           </p>
