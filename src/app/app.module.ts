@@ -13,6 +13,10 @@ import { appRoutes } from './app.routes'
 
 import { AgmCoreModule } from '@agm/core'
 
+import { registerLocaleData } from '@angular/common'
+import localeFr from '@angular/common/locales/fr'
+registerLocaleData(localeFr, 'fr')
+
 @NgModule({
   declarations: [
     AppComponent,

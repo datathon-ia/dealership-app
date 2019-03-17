@@ -5,9 +5,12 @@
   <div class="card--right">
     <p class="">
       <i class="fa fa-cal"></i>
-      <span class="m-r-gutter">17/03/2019</span>
+      <span class="m-r-gutter">{{ accident.createdAt | date }}</span>
       <i class="fa fa-clock"></i>
-      <span>15:45</span>
+      <span></span>
+      <span *ngFor="let vehicle of accident.vehicles" class="tag"
+        >{{ vehicle.name }}
+      </span>
     </p>
   </div>
 </div>

@@ -174,15 +174,21 @@ export class HomeComponent implements OnInit {
     this.interval = setInterval(() => {
       this.accidentService.list().subscribe((res: Accident[]) => {
         this.accidents = res.filter((accident: Accident) => !accident.closed)
-        console.log(this.accidents)
       })
     }, 2000)
   }
 
   openSidebar(accident: Accident) {
-    this.selectedAccident = accident
-
     const timeline = new TimelineLite()
+
+    if (this.showSidebar) {
+      timeline.to(this.sidebarEl.nativeElement, 0.5, {
+        width: '0',
+        ease: Power2.easeInOut
+      })
+    }
+
+    this.selectedAccident = accident
 
     timeline.to(this.sidebarEl.nativeElement, 0.5, {
       width: '530px',

@@ -23,6 +23,9 @@
       <a (click)="closeSidebar()"><i class="fa fa-close"></i></a>
     </div>
 
-    <app-accident-card></app-accident-card>
+    <app-accident-card
+      [accident]="selectedAccident"
+      *ngIf="selectedAccident"
+    ></app-accident-card>
   </div>
 </div>
