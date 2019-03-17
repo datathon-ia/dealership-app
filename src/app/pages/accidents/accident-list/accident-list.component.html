@@ -7,12 +7,23 @@
   [zoom]="10"
   [styles]="mapStyles"
 >
-  <agm-marker
-    *ngFor="let accident of accidents"
-    [latitude]="accident.camera.lat"
-    [longitude]="accident.camera.lon"
-    (markerClick)="openSidebar()"
-  ></agm-marker>
+  <ng-container *ngFor="let accident of accidents">
+    <agm-marker
+      [latitude]="accident.camera.lat"
+      [longitude]="accident.camera.lon"
+      *ngIf="accident.closed"
+    ></agm-marker>
+  </ng-container>
+
+  <ng-container *ngFor="let accident of accidents">
+    <agm-marker
+      [latitude]="accident.camera.lat"
+      [longitude]="accident.camera.lon"
+      iconUrl="../../../assets/img/caution.gif"
+      *ngIf="!accident.closed"
+    >
+    </agm-marker>
+  </ng-container>
 </agm-map>
 
 <div class="sidebar" #sidebar>
@@ -21,6 +32,9 @@
       <h4 class="title is-6 m-b-0">Historique des accidents</h4>
       <a (click)="closeSidebar()"><i class="fa fa-close has-text-grey"></i></a>
     </div>
-    <app-accident-card></app-accident-card>
+    <app-accident-card
+      *ngFor="let accident of accidents"
+      [accident]="accident"
+    ></app-accident-card>
   </div>
 </div>
