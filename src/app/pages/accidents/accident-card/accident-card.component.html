@@ -12,12 +12,12 @@
             <i class="dot m-r-xs">•</i>
             <span class="p-b-md has-text-black">
               {{ accident.vehicles.length }}
-              <ng-container *ngIf="accident.vehicles.length > 1"
-                >véhicules sont concernés</ng-container
-              >
-              <ng-container *ngIf="accident.vehicles.length < 2"
-                >véhicule est concerné</ng-container
-              >
+              <ng-container *ngIf="accident.vehicles.length > 1">
+                véhicules sont concernés
+              </ng-container>
+              <ng-container *ngIf="accident.vehicles.length < 2">
+                véhicule est concerné
+              </ng-container>
               par un accident sur votre secteur
             </span>
           </p>
@@ -42,9 +42,18 @@
     </div>
   </div>
   <div class="card__footer">
-    <a (click)="close(accident)" class="has-text-black" *ngIf="!accident.closed"
-      >Marquer comme traité</a
+    <a
+      (click)="close(accident)"
+      class="has-text-black"
+      *ngIf="!accident.closed"
     >
-    <a href="" class="has-text-danger">Appeler les secours</a>
+      <i class=" ctas fa fa-archive p-r-sm has-text-black-ter"></i>
+    </a>
+    <a href="" class="has-text-danger">
+      <i class=" ctas fa fa-adjust p-r-sm has-text-black-ter"></i>
+    </a>
+    <a href="" class="has-text-danger">
+      <i class=" ctas fa fa-phone-square"></i>
+    </a>
   </div>
 </div>
