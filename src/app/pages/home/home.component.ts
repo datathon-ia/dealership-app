@@ -226,4 +226,10 @@ export class HomeComponent implements OnInit {
     })
     this.showSidebar = false
   }
+
+  close(accident: Accident) {
+    this.accidentService.close(accident.id).subscribe(res => {
+      alert(`L'accident a été marqué comme traité`)
+    })
+  }
 }
