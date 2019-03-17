@@ -27,7 +27,7 @@ export class AccidentCardComponent implements OnInit {
 
   close(accident: Accident) {
     this.accidentService.close(accident.id).subscribe(res => {
-      alert("L'accident a été marqué comme traité")
+      alert(`L'accident a été marqué comme traité`)
     })
   }
 }
