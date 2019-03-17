@@ -11,6 +11,7 @@
     <agm-marker
       [latitude]="accident.camera.lat"
       [longitude]="accident.camera.lon"
+      iconUrl="../../../../assets/img/caution-closed.png"
       *ngIf="accident.closed"
     ></agm-marker>
   </ng-container>
@@ -29,7 +30,6 @@
   <div #sidebarContent>
     <div class="head  m-b-gutter">
       <h4 class="title is-6 m-b-0">Historique des accidents</h4>
-      <a (click)="closeSidebar()"><i class="fa fa-close has-text-grey"></i></a>
     </div>
     <app-accident-card
       *ngFor="let accident of accidents"
