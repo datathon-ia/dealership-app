@@ -2,7 +2,16 @@
   <div class="card__content">
     <div class="card--left">
       <figure>
-        <img src="../../../../assets/img/accident.jpg" alt="" />
+        <img
+          src="assets/img/accident-current.png"
+          alt="Image of accident"
+          *ngIf="!accident.closed"
+        />
+        <img
+          src="assets/img/accident-{{ index + 1 }}.png"
+          alt="Image of accident"
+          *ngIf="accident.closed"
+        />
       </figure>
     </div>
     <div class="card--right">

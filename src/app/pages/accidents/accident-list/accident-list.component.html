@@ -32,8 +32,9 @@
       <h4 class="title is-6 m-b-0">Historique des accidents</h4>
     </div>
     <app-accident-card
-      *ngFor="let accident of accidents"
+      *ngFor="let accident of accidents; let i = index"
       [accident]="accident"
+      [index]="i"
     ></app-accident-card>
   </div>
 </div>

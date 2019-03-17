@@ -10,6 +10,7 @@ import { AccidentService } from '../../../common/services/accident.service'
 })
 export class AccidentCardComponent implements OnInit {
   @Input() accident: Accident
+  @Input() index: number
 
   carCount: number
   bikeCount: number
