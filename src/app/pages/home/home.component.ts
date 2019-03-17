@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core'
 import { MapTypeStyle } from '@agm/core'
-import { TimelineLite, Power2 } from 'gsap'
+import { TweenLight, TimelineLite, Power2 } from 'gsap'
 import { Accident } from '../../common/interfaces/accident'
 import { AccidentService } from '../../common/services/accident.service'
 
@@ -186,6 +186,10 @@ export class HomeComponent implements OnInit {
         width: '0',
         ease: Power2.easeInOut
       })
+      timeline.to(this.sidebarContentEl.nativeElement, 0.2, {
+        opacity: 0,
+        ease: Power2.easeInOut
+      })
     }
 
     this.selectedAccident = accident
@@ -205,7 +209,6 @@ export class HomeComponent implements OnInit {
   closeSidebar() {
     const timeline = new TimelineLite()
     timeline.to(this.sidebarContentEl.nativeElement, 0.2, {
-      top: '6px',
       opacity: 0,
       ease: Power2.easeInOut
     })
