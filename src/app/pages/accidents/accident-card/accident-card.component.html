@@ -30,6 +30,14 @@
               <i class="fa fa-motorcycle m-r-xs" *ngIf="bikeCount"></i>
               x {{ bikeCount }}
             </span>
+            <span class="m-r-gutter" *ngIf="truckCount">
+              <i class="fa fa-truck m-r-xs"></i>
+              x {{ truckCount }}
+            </span>
+            <span class="m-r-gutter" *ngIf="personCount">
+              <i class="fa fa-male m-r-xs" *ngIf="personCount"></i>
+              x {{ personCount }}
+            </span>
           </p>
         </div>
         <div class="card--bottom">

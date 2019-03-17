@@ -169,6 +169,8 @@ export class HomeComponent implements OnInit {
   selectedAccidents: Accident
   carCount: number
   bikeCount: number
+  personCount: number
+  truckCount: number
 
   constructor(private accidentService: AccidentService) {}
 
@@ -200,6 +202,12 @@ export class HomeComponent implements OnInit {
     ).length
     this.bikeCount = this.selectedAccident.vehicles.filter(
       (v: any) => v.name === 'bike'
+    ).length
+    this.personCount = this.selectedAccident.vehicles.filter(
+      (v: any) => v.name === 'person'
+    ).length
+    this.truckCount = this.selectedAccident.vehicles.filter(
+      (v: any) => v.name === 'truck'
     ).length
 
     timeline.to(this.sidebarEl.nativeElement, 0.5, {
