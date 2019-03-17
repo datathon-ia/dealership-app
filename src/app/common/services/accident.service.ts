@@ -18,4 +18,14 @@ export class AccidentService {
       })
     )
   }
+
+  close(id: number): Observable<Accident[]> {
+    return this.http
+      .put(`${environment.apiBaseUrl}accidents/${id}/close`, {})
+      .pipe(
+        map((res: Accident[]) => {
+          return res
+        })
+      )
+  }
 }

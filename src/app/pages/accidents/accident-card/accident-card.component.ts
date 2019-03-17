@@ -1,15 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core'
+import { Accident } from '../../../common/interfaces/accident'
+import { AccidentService } from '../../../common/services/accident.service'
 
 @Component({
   selector: 'app-accident-card',
   templateUrl: './accident-card.component.html',
-  styleUrls: ['./accident-card.component.scss']
+  styleUrls: ['./accident-card.component.scss'],
+  providers: [AccidentService]
 })
 export class AccidentCardComponent implements OnInit {
+  @Input() accident: Accident
 
-  constructor() { }
+  carCount: number
+  bikeCount: number
+
+  constructor(private accidentService: AccidentService) {}
 
   ngOnInit() {
+    this.carCount = this.accident.vehicles.filter(
+      (v: any) => v.name === 'car'
+    ).length
+    this.bikeCount = this.accident.vehicles.filter(
+      (v: any) => v.name === 'bike'
+    ).length
   }
 
+  close(accident: Accident) {
+    this.accidentService.close(accident.id).subscribe(res => {
+      alert("L'accident a été marqué comme traité")
+    })
+  }
 }
