@@ -10,11 +10,74 @@ img {
 
   > div {
     opacity: 0;
+    height: 100%;
   }
 }
 
-.head {
+.card {
+  border: 0;
+  box-shadow: none;
+  height: 100%;
+  margin-bottom: 20px;
   @include flexbox;
-  @include align-items(center);
-  @include justify-content(space-between);
+  @include flex-direction(column);
+
+  figure {
+    height: 220px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  &--right {
+    width: calc(100% - 200px);
+    > div {
+      height: 100%;
+      padding: 20px;
+      @include flexbox;
+      @include flex-direction(column);
+      @include align-items(center);
+      @include justify-content(space-between);
+    }
+  }
+  &--left {
+    height: 220px;
+    width: 100%;
+  }
+  &--bottom {
+    width: 100%;
+  }
 }
+
+.has-dot {
+  @include flexbox;
+  @include align-items(flex-start);
+  @include justify-content(flex-start);
+  border-bottom: 1px solid #dedede;
+}
+
+.date {
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.dot {
+  font-size: 38px;
+
+  font-style: normal;
+  color: #f33f5d;
+}
+
+.vehicles span {
+  display: inline-block;
+}
+
+// button

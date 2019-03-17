@@ -19,13 +19,50 @@
 <div class="sidebar" #sidebar>
   <div #sidebarContent>
     <div class="head  m-b-gutter">
-      <h4 class="title is-4 m-b-0">Accident detecté</h4>
-      <a (click)="closeSidebar()"><i class="fa fa-close"></i></a>
+      <h4 class="title is-6 m-b-0">Accident detecté</h4>
+      <a (click)="closeSidebar()"><i class="fa fa-close has-text-grey"></i></a>
     </div>
 
-    <app-accident-card
-      [accident]="selectedAccident"
-      *ngIf="selectedAccident"
-    ></app-accident-card>
+    <div class="card">
+      <p class="date ">
+        <span class="m-r-gutter">
+          17 MARS
+        </span>
+        <span>
+          <i class="fa c"></i>
+          à 15:45
+        </span>
+      </p>
+
+      <p class="has-dot ">
+        <i class="dot m-r-xs">•</i>
+        <span class="p-b-md has-text-black p-t-md">
+          3 véhicules sont concernés par un accident sur votre secteur
+        </span>
+      </p>
+
+      <figure>
+        <img src="../../../../assets/img/accident.jpg" alt="" />
+      </figure>
+
+      <div>
+        <div class="card--middle">
+          <p class="    m-t-md vehicles">
+            <span class="m-r-gutter">
+              <i class="fa fa-car m-r-xs"></i>
+              x 2
+            </span>
+            <span class="m-r-gutter">
+              <i class="fa fa-motorcycle m-r-xs"></i>
+              x 1
+            </span>
+          </p>
+        </div>
+      </div>
+      <div class="foot">
+        <a href="" class="has-text-black">Marquer comme traité</a>
+        <a href="" class="has-text-danger">Appeler les secours</a>
+      </div>
+    </div>
   </div>
 </div>
